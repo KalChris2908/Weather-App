@@ -1,5 +1,5 @@
 const WeatherAPI = {
-  apiKey: "YOUR_OPENWEATHERMAP_API_KEY", // replace with your API key
+  apiKey: "beb61450ab46fc966fd88c974a55e2dc", // replace with your API key
   baseUrl: "https://api.openweathermap.org/data/2.5/weather",
 
   async getWeather(city) {
