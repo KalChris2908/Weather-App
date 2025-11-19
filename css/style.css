@@ -1,0 +1,109 @@
+:root {
+  --bg: #f7f7f7;
+  --card: #ffffff;
+  --text: #111;
+  --accent: #007bff;
+  --shadow: rgba(0,0,0,0.1);
+}
+
+body.dark {
+  --bg: #111;
+  --card: #1d1d1d;
+  --text: #eee;
+  --shadow: rgba(255,255,255,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: background 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-btn {
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.input-area {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.weather-container {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: 0 2px 10px var(--shadow);
+  text-align: center;
+}
+
+.weather-container img {
+  width: 80px;
+  height: 80px;
+}
+
+.weather-container h2 {
+  margin: 10px 0;
+}
+
+.weather-container p {
+  margin: 5px 0;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.3s;
+}
