@@ -6,11 +6,13 @@
   --shadow: rgba(0,0,0,0.1);
 }
 
+/* Dark theme variables */
 body.dark {
-  --bg: #111;
-  --card: #1d1d1d;
-  --text: #eee;
-  --shadow: rgba(255,255,255,0.1);
+  --bg: #0b0d0f;
+  --card: #121316;
+  --text: #e9f2ff;            /* bright readable text */
+  --accent: #4ea8ff;
+  --shadow: rgba(255,255,255,0.03);
 }
 
 * {
@@ -20,12 +22,14 @@ body.dark {
   font-family: Arial, sans-serif;
 }
 
+/* Ensure global color follows variable */
 body {
   background: var(--bg);
+  color: var(--text);         /* <-- important */
   padding: 40px 20px;
   display: flex;
   justify-content: center;
-  transition: 0.3s;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .app-container {
@@ -35,7 +39,7 @@ body {
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 15px var(--shadow);
-  transition: background 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 header {
@@ -49,6 +53,7 @@ header {
   background: none;
   font-size: 22px;
   cursor: pointer;
+  color: var(--text);
 }
 
 .input-area {
@@ -63,6 +68,13 @@ input {
   border-radius: 6px;
   border: 1px solid #ccc;
   outline: none;
+  background: var(--card);
+  color: var(--text);         /* ensure typed text is visible in dark */
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+input::placeholder {
+  color: color-mix(in srgb, var(--text) 35%, transparent);
 }
 
 button {
@@ -81,6 +93,7 @@ button {
   background: var(--bg);
   box-shadow: 0 2px 10px var(--shadow);
   text-align: center;
+  color: var(--text);         /* explicit */
 }
 
 .weather-container img {
@@ -94,8 +107,10 @@ button {
 
 .weather-container p {
   margin: 5px 0;
+  color: var(--text);         /* explicit */
 }
 
+/* toast readable */
 .toast {
   position: fixed;
   bottom: 20px;
@@ -105,5 +120,5 @@ button {
   padding: 12px 20px;
   border-radius: 8px;
   opacity: 0;
-  transition: 0.3s;
+  transition: opacity 0.25s;
 }
